@@ -1,0 +1,406 @@
+    1 ARRAY_SIZE():
+    2     log_early() <void __init log_early (int op_type, const void *ptr, size_t size, int min_count) at mm/kmemleak.c:854>:
+    3         kmemleak_alloc() <void __ref kmemleak_alloc (const void *ptr, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:944>:
+    4             kmemleak_alloc_phys() <void __ref kmemleak_alloc_phys (phys_addr_t phys, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:1193>
+    5         kmemleak_alloc_percpu() <void __ref kmemleak_alloc_percpu (const void __percpu *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:965>
+    6         kmemleak_vmalloc() <void __ref kmemleak_vmalloc (const struct vm_struct *area, size_t size, gfp_t gfp) at mm/kmemleak.c:994>
+    7         kmemleak_free() <void __ref kmemleak_free (const void *ptr) at mm/kmemleak.c:1022>:
+    8             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000>
+    9         kmemleak_free_part() <void __ref kmemleak_free_part (const void *ptr, size_t size) at mm/kmemleak.c:1042>:
+   10             kmemleak_free_part_phys() <void __ref kmemleak_free_part_phys (phys_addr_t phys, size_t size) at mm/kmemleak.c:1205>
+   11             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   12         kmemleak_free_percpu() <void __ref kmemleak_free_percpu (const void __percpu *ptr) at mm/kmemleak.c:1060>:
+   13             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   14         kmemleak_not_leak() <void __ref kmemleak_not_leak (const void *ptr) at mm/kmemleak.c:1116>:
+   15             kmemleak_not_leak_phys() <void __ref kmemleak_not_leak_phys (phys_addr_t phys) at mm/kmemleak.c:1216>
+   16             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   17         kmemleak_ignore() <void __ref kmemleak_ignore (const void *ptr) at mm/kmemleak.c:1136>:
+   18             kmemleak_ignore_phys() <void __ref kmemleak_ignore_phys (phys_addr_t phys) at mm/kmemleak.c:1227>
+   19             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   20         kmemleak_scan_area() <void __ref kmemleak_scan_area (const void *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:1158>:
+   21             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   22         kmemleak_no_scan() <void __ref kmemleak_no_scan (const void *ptr) at mm/kmemleak.c:1178>:
+   23             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   24     kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   25 ERR_PTR():
+   26     kmemleak_seq_start() <void *kmemleak_seq_start (struct seq_file seq, loff_t *pos) at mm/kmemleak.c:1684>
+   27 INIT_HLIST_HEAD()
+   28 INIT_HLIST_NODE():
+   29     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>:
+   30         kmemleak_scan_area() <void __ref kmemleak_scan_area (const void *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:1158>: [see 20]
+   31 INIT_LIST_HEAD()
+   32 IS_ENABLED():
+   33     kmemleak_alloc_phys() <void __ref kmemleak_alloc_phys (phys_addr_t phys, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:1193> [see 4]
+   34     kmemleak_free_part_phys() <void __ref kmemleak_free_part_phys (phys_addr_t phys, size_t size) at mm/kmemleak.c:1205> [see 10]
+   35     kmemleak_not_leak_phys() <void __ref kmemleak_not_leak_phys (phys_addr_t phys) at mm/kmemleak.c:1216> [see 15]
+   36     kmemleak_ignore_phys() <void __ref kmemleak_ignore_phys (phys_addr_t phys) at mm/kmemleak.c:1227> [see 18]
+   37 IS_ERR():
+   38     early_alloc() <void early_alloc (struct early_log log) at mm/kmemleak.c:890>:
+   39         early_alloc_percpu() <void early_alloc_percpu (struct early_log log) at mm/kmemleak.c:919>:
+   40             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   41         kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   42     kmemleak_alloc() <void __ref kmemleak_alloc (const void *ptr, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:944>: [see 3]
+   43     kmemleak_alloc_percpu() <void __ref kmemleak_alloc_percpu (const void __percpu *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:965> [see 5]
+   44     kmemleak_free() <void __ref kmemleak_free (const void *ptr) at mm/kmemleak.c:1022>: [see 7]
+   45     kmemleak_free_part() <void __ref kmemleak_free_part (const void *ptr, size_t size) at mm/kmemleak.c:1042>: [see 9]
+   46     kmemleak_free_percpu() <void __ref kmemleak_free_percpu (const void __percpu *ptr) at mm/kmemleak.c:1060>: [see 12]
+   47     kmemleak_not_leak() <void __ref kmemleak_not_leak (const void *ptr) at mm/kmemleak.c:1116>: [see 14]
+   48     kmemleak_ignore() <void __ref kmemleak_ignore (const void *ptr) at mm/kmemleak.c:1136>: [see 17]
+   49     kmemleak_scan_area() <void __ref kmemleak_scan_area (const void *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:1158>: [see 20]
+   50     kmemleak_no_scan() <void __ref kmemleak_no_scan (const void *ptr) at mm/kmemleak.c:1178>: [see 22]
+   51     start_scan_thread() <void start_scan_thread (void) at mm/kmemleak.c:1656>:
+   52         kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837>
+   53         kmemleak_late_init() <int __init kmemleak_late_init (void) at mm/kmemleak.c:2090>
+   54     kmemleak_seq_stop() <void kmemleak_seq_stop (struct seq_file seq, void *v) at mm/kmemleak.c:1732>
+   55 IS_ERR_OR_NULL():
+   56     kmemleak_update_trace() <void __ref kmemleak_update_trace (const void *ptr) at mm/kmemleak.c:1082>
+   57 KMEM_CACHE():
+   58     kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   59 PHYS_PFN():
+   60     kmemleak_alloc_phys() <void __ref kmemleak_alloc_phys (phys_addr_t phys, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:1193> [see 4]
+   61     kmemleak_free_part_phys() <void __ref kmemleak_free_part_phys (phys_addr_t phys, size_t size) at mm/kmemleak.c:1205> [see 10]
+   62     kmemleak_not_leak_phys() <void __ref kmemleak_not_leak_phys (phys_addr_t phys) at mm/kmemleak.c:1216> [see 15]
+   63     kmemleak_ignore_phys() <void __ref kmemleak_ignore_phys (phys_addr_t phys) at mm/kmemleak.c:1227> [see 18]
+   64 PTR_ALIGN():
+   65     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>:
+   66         scan_large_block() <void scan_large_block (void *start, void *end) at mm/kmemleak.c:1376>:
+   67             kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>:
+   68                 kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>:
+   69                     start_scan_thread() <void start_scan_thread (void) at mm/kmemleak.c:1656>: [see 51]
+   70                 kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+   71         scan_object() <void scan_object (struct kmemleak_object object) at mm/kmemleak.c:1392>:
+   72             scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>:
+   73                 kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+   74         kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+   75 WARN_ON():
+   76     put_object() <void put_object (struct kmemleak_object object) at mm/kmemleak.c:476>:
+   77         paint_ptr() <void paint_ptr (unsigned long ptr, int color) at mm/kmemleak.c:726>:
+   78             make_gray_object() <void make_gray_object (unsigned long ptr) at mm/kmemleak.c:746>:
+   79                 kmemleak_not_leak() <void __ref kmemleak_not_leak (const void *ptr) at mm/kmemleak.c:1116>: [see 14]
+   80             make_black_object() <void make_black_object (unsigned long ptr) at mm/kmemleak.c:755>:
+   81                 kmemleak_ignore() <void __ref kmemleak_ignore (const void *ptr) at mm/kmemleak.c:1136>: [see 17]
+   82         add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+   83         object_set_excess_ref() <void object_set_excess_ref (unsigned long ptr, unsigned long excess_ref) at mm/kmemleak.c:810>:
+   84             kmemleak_vmalloc() <void __ref kmemleak_vmalloc (const struct vm_struct *area, size_t size, gfp_t gfp) at mm/kmemleak.c:994> [see 6]
+   85             kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+   86         object_no_scan() <void object_no_scan (unsigned long ptr) at mm/kmemleak.c:833>:
+   87             kmemleak_no_scan() <void __ref kmemleak_no_scan (const void *ptr) at mm/kmemleak.c:1178>: [see 22]
+   88         kmemleak_update_trace() <void __ref kmemleak_update_trace (const void *ptr) at mm/kmemleak.c:1082> [see 56]
+   89         scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+   90         kmemleak_seq_next() <void *kmemleak_seq_next (struct seq_file seq, void *v, loff_t *pos) at mm/kmemleak.c:1710>
+   91         kmemleak_seq_stop() <void kmemleak_seq_stop (struct seq_file seq, void *v) at mm/kmemleak.c:1732> [see 54]
+   92         dump_str_object_info() <int dump_str_object_info (const char *str) at mm/kmemleak.c:1773>:
+   93             kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+   94     update_refs() <void update_refs (struct kmemleak_object object) at mm/kmemleak.c:1254>:
+   95         scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+   96     scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+   97 atomic_dec_and_test():
+   98     put_object() <void put_object (struct kmemleak_object object) at mm/kmemleak.c:476>: [see 76]
+   99 atomic_inc_not_zero():
+  100     get_object() <int get_object (struct kmemleak_object object) at mm/kmemleak.c:443>:
+  101         update_refs() <void update_refs (struct kmemleak_object object) at mm/kmemleak.c:1254>: [see 94]
+  102         kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  103         kmemleak_seq_start() <void *kmemleak_seq_start (struct seq_file seq, loff_t *pos) at mm/kmemleak.c:1684> [see 26]
+  104         kmemleak_seq_next() <void *kmemleak_seq_next (struct seq_file seq, void *v, loff_t *pos) at mm/kmemleak.c:1710> [see 90]
+  105 atomic_read():
+  106     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  107 atomic_set()
+  108 call_rcu():
+  109     put_object() <void put_object (struct kmemleak_object object) at mm/kmemleak.c:476>: [see 76]
+  110 cmpxchg():
+  111     kmemleak_disable() <void kmemleak_disable (void) at mm/kmemleak.c:1951>:
+  112         log_early() <void __init log_early (int op_type, const void *ptr, size_t size, int min_count) at mm/kmemleak.c:854>: [see 2]
+  113         kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  114         kmemleak_boot_config() <int kmemleak_boot_config (char *str) at mm/kmemleak.c:1972>
+  115         kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  116 cond_resched():
+  117     scan_large_block() <void scan_large_block (void *start, void *end) at mm/kmemleak.c:1376>: [see 66]
+  118     scan_object() <void scan_object (struct kmemleak_object object) at mm/kmemleak.c:1392>: [see 71]
+  119     scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+  120 container_of():
+  121     free_object_rcu() <void free_object_rcu (struct rcu_head rcu) at mm/kmemleak.c:451>:
+  122         put_object() <void put_object (struct kmemleak_object object) at mm/kmemleak.c:476>: [see 76]
+  123 crc32():
+  124     update_checksum() <bool update_checksum (struct kmemleak_object object) at mm/kmemleak.c:1237>:
+  125         kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  126 debugfs_create_file():
+  127     kmemleak_late_init() <int __init kmemleak_late_init (void) at mm/kmemleak.c:2090> [see 53]
+  128 do_each_thread():
+  129     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  130 for_each_online_node():
+  131     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  132 for_each_possible_cpu():
+  133     early_alloc_percpu() <void early_alloc_percpu (struct early_log log) at mm/kmemleak.c:919>: [see 39]
+  134     kmemleak_alloc_percpu() <void __ref kmemleak_alloc_percpu (const void __percpu *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:965> [see 5]
+  135     kmemleak_free_percpu() <void __ref kmemleak_free_percpu (const void __percpu *ptr) at mm/kmemleak.c:1060>: [see 12]
+  136     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  137 get_online_mems():
+  138     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  139 gfp_kmemleak_mask():
+  140     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  141 hlist_add_head():
+  142     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  143 hlist_del():
+  144     free_object_rcu() <void free_object_rcu (struct rcu_head rcu) at mm/kmemleak.c:451>: [see 121]
+  145 hlist_empty():
+  146     scan_object() <void scan_object (struct kmemleak_object object) at mm/kmemleak.c:1392>: [see 71]
+  147 hlist_for_each_entry():
+  148     scan_object() <void scan_object (struct kmemleak_object object) at mm/kmemleak.c:1392>: [see 71]
+  149 hlist_for_each_entry_safe():
+  150     free_object_rcu() <void free_object_rcu (struct rcu_head rcu) at mm/kmemleak.c:451>: [see 121]
+  151 in_irq()
+  152 in_softirq()
+  153 jiffies_to_msecs():
+  154     print_unreferenced() <void print_unreferenced (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:364>:
+  155         kmemleak_seq_show() <int kmemleak_seq_show (struct seq_file seq, void *v) at mm/kmemleak.c:1749>
+  156 kasan_disable_current():
+  157     hex_dump_object() <void hex_dump_object (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:310>:
+  158         print_unreferenced() <void print_unreferenced (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:364>: [see 154]
+  159     update_checksum() <bool update_checksum (struct kmemleak_object object) at mm/kmemleak.c:1237>: [see 124]
+  160     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  161 kasan_enable_current():
+  162     hex_dump_object() <void hex_dump_object (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:310>: [see 157]
+  163     update_checksum() <bool update_checksum (struct kmemleak_object object) at mm/kmemleak.c:1237>: [see 124]
+  164     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  165 kmem_cache_alloc():
+  166     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  167 kmem_cache_free():
+  168     free_object_rcu() <void free_object_rcu (struct rcu_head rcu) at mm/kmemleak.c:451>: [see 121]
+  169     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  170 kmemcheck_is_obj_initialized():
+  171     update_checksum() <bool update_checksum (struct kmemleak_object object) at mm/kmemleak.c:1237>: [see 124]
+  172     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  173 kmemleak_alloc() <void __ref kmemleak_alloc (const void *ptr, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:944>: [see 3]
+  174 kmemleak_alloc_percpu() <void __ref kmemleak_alloc_percpu (const void __percpu *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:965> [see 5]
+  175 kmemleak_alloc_phys() <void __ref kmemleak_alloc_phys (phys_addr_t phys, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:1193> [see 4]
+  176 kmemleak_free() <void __ref kmemleak_free (const void *ptr) at mm/kmemleak.c:1022>: [see 7]
+  177 kmemleak_free_part() <void __ref kmemleak_free_part (const void *ptr, size_t size) at mm/kmemleak.c:1042>: [see 9]
+  178 kmemleak_free_part_phys() <void __ref kmemleak_free_part_phys (phys_addr_t phys, size_t size) at mm/kmemleak.c:1205> [see 10]
+  179 kmemleak_free_percpu() <void __ref kmemleak_free_percpu (const void __percpu *ptr) at mm/kmemleak.c:1060>: [see 12]
+  180 kmemleak_ignore() <void __ref kmemleak_ignore (const void *ptr) at mm/kmemleak.c:1136>: [see 17]
+  181 kmemleak_ignore_phys() <void __ref kmemleak_ignore_phys (phys_addr_t phys) at mm/kmemleak.c:1227> [see 18]
+  182 kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  183 kmemleak_no_scan() <void __ref kmemleak_no_scan (const void *ptr) at mm/kmemleak.c:1178>: [see 22]
+  184 kmemleak_not_leak() <void __ref kmemleak_not_leak (const void *ptr) at mm/kmemleak.c:1116>: [see 14]
+  185 kmemleak_not_leak_phys() <void __ref kmemleak_not_leak_phys (phys_addr_t phys) at mm/kmemleak.c:1216> [see 15]
+  186 kmemleak_scan_area() <void __ref kmemleak_scan_area (const void *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:1158>: [see 20]
+  187 kmemleak_stop()
+  188 kmemleak_update_trace() <void __ref kmemleak_update_trace (const void *ptr) at mm/kmemleak.c:1082> [see 56]
+  189 kmemleak_vmalloc() <void __ref kmemleak_vmalloc (const struct vm_struct *area, size_t size, gfp_t gfp) at mm/kmemleak.c:994> [see 6]
+  190 kmemleak_warn():
+  191     delete_object_full() <void delete_object_full (unsigned long ptr) at mm/kmemleak.c:657>:
+  192         kmemleak_free() <void __ref kmemleak_free (const void *ptr) at mm/kmemleak.c:1022>: [see 7]
+  193         kmemleak_free_percpu() <void __ref kmemleak_free_percpu (const void __percpu *ptr) at mm/kmemleak.c:1060>: [see 12]
+  194     delete_object_part() <void delete_object_part (unsigned long ptr, size_t size) at mm/kmemleak.c:677>:
+  195         kmemleak_free_part() <void __ref kmemleak_free_part (const void *ptr, size_t size) at mm/kmemleak.c:1042>: [see 9]
+  196     paint_ptr() <void paint_ptr (unsigned long ptr, int color) at mm/kmemleak.c:726>: [see 77]
+  197     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  198     object_set_excess_ref() <void object_set_excess_ref (unsigned long ptr, unsigned long excess_ref) at mm/kmemleak.c:810>: [see 83]
+  199     object_no_scan() <void object_no_scan (unsigned long ptr) at mm/kmemleak.c:833>: [see 86]
+  200     kmemleak_update_trace() <void __ref kmemleak_update_trace (const void *ptr) at mm/kmemleak.c:1082> [see 56]
+  201     kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  202 kstrtoul():
+  203     dump_str_object_info() <int dump_str_object_info (const char *str) at mm/kmemleak.c:1773>: [see 92]
+  204     kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  205 kthread_run():
+  206     start_scan_thread() <void start_scan_thread (void) at mm/kmemleak.c:1656>: [see 51]
+  207 kthread_should_stop():
+  208     scan_should_stop() <int scan_should_stop (void) at mm/kmemleak.c:1279>:
+  209         scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  210         scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+  211         kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  212     kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>: [see 68]
+  213 kthread_stop():
+  214     stop_scan_thread() <void stop_scan_thread (void) at mm/kmemleak.c:1671>:
+  215         kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  216         kmemleak_do_cleanup() <void kmemleak_do_cleanup (struct work_struct work) at mm/kmemleak.c:1928>
+  217 list_add_tail():
+  218     update_refs() <void update_refs (struct kmemleak_object object) at mm/kmemleak.c:1254>: [see 94]
+  219     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  220 list_add_tail_rcu()
+  221 list_del():
+  222     scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+  223 list_del_rcu()
+  224 list_empty():
+  225     scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+  226 list_entry():
+  227     scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+  228 list_for_each_entry_continue_rcu():
+  229     kmemleak_seq_next() <void *kmemleak_seq_next (struct seq_file seq, void *v, loff_t *pos) at mm/kmemleak.c:1710> [see 90]
+  230 list_for_each_entry_rcu():
+  231     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  232     kmemleak_seq_start() <void *kmemleak_seq_start (struct seq_file seq, loff_t *pos) at mm/kmemleak.c:1684> [see 26]
+  233     kmemleak_clear() <void kmemleak_clear (void) at mm/kmemleak.c:1801>:
+  234         kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  235 local_irq_restore():
+  236     log_early() <void __init log_early (int op_type, const void *ptr, size_t size, int min_count) at mm/kmemleak.c:854>: [see 2]
+  237     kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  238 local_irq_save():
+  239     log_early() <void __init log_early (int op_type, const void *ptr, size_t size, int min_count) at mm/kmemleak.c:854>: [see 2]
+  240     kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  241 max()
+  242 min():
+  243     scan_large_block() <void scan_large_block (void *start, void *end) at mm/kmemleak.c:1376>: [see 66]
+  244     scan_object() <void scan_object (struct kmemleak_object object) at mm/kmemleak.c:1392>: [see 71]
+  245     kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  246 min_t():
+  247     hex_dump_object() <void hex_dump_object (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:310>: [see 157]
+  248 msecs_to_jiffies():
+  249     kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>: [see 68]
+  250     kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  251     kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  252 mutex_lock():
+  253     kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>: [see 68]
+  254     kmemleak_late_init() <int __init kmemleak_late_init (void) at mm/kmemleak.c:2090> [see 53]
+  255 mutex_lock_interruptible():
+  256     kmemleak_seq_start() <void *kmemleak_seq_start (struct seq_file seq, loff_t *pos) at mm/kmemleak.c:1684> [see 26]
+  257     kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  258 mutex_unlock():
+  259     kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>: [see 68]
+  260     kmemleak_seq_stop() <void kmemleak_seq_stop (struct seq_file seq, void *v) at mm/kmemleak.c:1732> [see 54]
+  261     kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  262     kmemleak_late_init() <int __init kmemleak_late_init (void) at mm/kmemleak.c:2090> [see 53]
+  263 node_end_pfn():
+  264     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  265 node_start_pfn():
+  266     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  267 page_count():
+  268     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  269 per_cpu_offset():
+  270     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  271 per_cpu_ptr():
+  272     early_alloc_percpu() <void early_alloc_percpu (struct early_log log) at mm/kmemleak.c:919>: [see 39]
+  273     kmemleak_alloc_percpu() <void __ref kmemleak_alloc_percpu (const void __percpu *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:965> [see 5]
+  274     kmemleak_free_percpu() <void __ref kmemleak_free_percpu (const void __percpu *ptr) at mm/kmemleak.c:1060>: [see 12]
+  275 pfn_to_page():
+  276     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  277 pfn_valid():
+  278     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  279 pr_debug():
+  280     kmemleak_alloc() <void __ref kmemleak_alloc (const void *ptr, size_t size, int min_count, gfp_t gfp) at mm/kmemleak.c:944>: [see 3]
+  281     kmemleak_alloc_percpu() <void __ref kmemleak_alloc_percpu (const void __percpu *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:965> [see 5]
+  282     kmemleak_vmalloc() <void __ref kmemleak_vmalloc (const struct vm_struct *area, size_t size, gfp_t gfp) at mm/kmemleak.c:994> [see 6]
+  283     kmemleak_free() <void __ref kmemleak_free (const void *ptr) at mm/kmemleak.c:1022>: [see 7]
+  284     kmemleak_free_part() <void __ref kmemleak_free_part (const void *ptr, size_t size) at mm/kmemleak.c:1042>: [see 9]
+  285     kmemleak_free_percpu() <void __ref kmemleak_free_percpu (const void __percpu *ptr) at mm/kmemleak.c:1060>: [see 12]
+  286     kmemleak_update_trace() <void __ref kmemleak_update_trace (const void *ptr) at mm/kmemleak.c:1082> [see 56]
+  287     kmemleak_not_leak() <void __ref kmemleak_not_leak (const void *ptr) at mm/kmemleak.c:1116>: [see 14]
+  288     kmemleak_ignore() <void __ref kmemleak_ignore (const void *ptr) at mm/kmemleak.c:1136>: [see 17]
+  289     kmemleak_scan_area() <void __ref kmemleak_scan_area (const void *ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:1158>: [see 20]
+  290     kmemleak_no_scan() <void __ref kmemleak_no_scan (const void *ptr) at mm/kmemleak.c:1178>: [see 22]
+  291     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  292 pr_info():
+  293     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  294     kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>: [see 68]
+  295     dump_str_object_info() <int dump_str_object_info (const char *str) at mm/kmemleak.c:1773>: [see 92]
+  296     kmemleak_do_cleanup() <void kmemleak_do_cleanup (struct work_struct work) at mm/kmemleak.c:1928> [see 216]
+  297     kmemleak_disable() <void kmemleak_disable (void) at mm/kmemleak.c:1951>: [see 111]
+  298     kmemleak_late_init() <int __init kmemleak_late_init (void) at mm/kmemleak.c:2090> [see 53]
+  299 pr_notice():
+  300     dump_object_info() <void dump_object_info (struct kmemleak_object object) at mm/kmemleak.c:389>:
+  301         add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  302         kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  303         dump_str_object_info() <int dump_str_object_info (const char *str) at mm/kmemleak.c:1773>: [see 92]
+  304     print_log_trace() <void __init print_log_trace (struct early_log log) at mm/kmemleak.c:1986>:
+  305         kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  306 pr_warn():
+  307     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  308     start_scan_thread() <void start_scan_thread (void) at mm/kmemleak.c:1656>: [see 51]
+  309     kmemleak_init() <void __init kmemleak_init (void) at mm/kmemleak.c:2000> [see 8]
+  310     kmemleak_late_init() <int __init kmemleak_late_init (void) at mm/kmemleak.c:2090> [see 53]
+  311 print_stack_trace():
+  312     dump_object_info() <void dump_object_info (struct kmemleak_object object) at mm/kmemleak.c:389>: [see 300]
+  313     print_log_trace() <void __init print_log_trace (struct early_log log) at mm/kmemleak.c:1986>: [see 304]
+  314 put_online_mems():
+  315     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  316 put_task_stack():
+  317     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  318 rb_entry()
+  319 rb_erase()
+  320 rb_insert_color()
+  321 rb_link_node()
+  322 rcu_read_lock():
+  323     early_alloc() <void early_alloc (struct early_log log) at mm/kmemleak.c:890>: [see 38]
+  324     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  325     kmemleak_seq_start() <void *kmemleak_seq_start (struct seq_file seq, loff_t *pos) at mm/kmemleak.c:1684> [see 26]
+  326     kmemleak_clear() <void kmemleak_clear (void) at mm/kmemleak.c:1801>: [see 233]
+  327 rcu_read_unlock():
+  328     early_alloc() <void early_alloc (struct early_log log) at mm/kmemleak.c:890>: [see 38]
+  329     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  330     kmemleak_seq_stop() <void kmemleak_seq_stop (struct seq_file seq, void *v) at mm/kmemleak.c:1732> [see 54]
+  331     kmemleak_clear() <void kmemleak_clear (void) at mm/kmemleak.c:1801>: [see 233]
+  332 read_lock():
+  333     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  334 read_lock_irqsave():
+  335     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  336 read_unlock():
+  337     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  338 read_unlock_irqrestore():
+  339     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  340 save_stack_trace():
+  341 schedule_timeout_interruptible():
+  342     kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>: [see 68]
+  343 schedule_work():
+  344     kmemleak_disable() <void kmemleak_disable (void) at mm/kmemleak.c:1951>: [see 111]
+  345     kmemleak_late_init() <int __init kmemleak_late_init (void) at mm/kmemleak.c:2090> [see 53]
+  346 seq_hex_dump():
+  347     hex_dump_object() <void hex_dump_object (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:310>: [see 157]
+  348 seq_open():
+  349     kmemleak_open() <int kmemleak_open (struct inode inode, struct file file) at mm/kmemleak.c:1768>
+  350 seq_printf():
+  351     hex_dump_object() <void hex_dump_object (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:310>: [see 157]
+  352     print_unreferenced() <void print_unreferenced (struct seq_file seq, struct kmemleak_object object) at mm/kmemleak.c:364>: [see 154]
+  353 set_user_nice():
+  354     kmemleak_scan_thread() <int kmemleak_scan_thread (void *arg) at mm/kmemleak.c:1618>: [see 68]
+  355 signal_pending():
+  356     scan_should_stop() <int scan_should_stop (void) at mm/kmemleak.c:1279>: [see 208]
+  357 spin_lock_init()
+  358 spin_lock_irqsave():
+  359     paint_it() <void paint_it (struct kmemleak_object object, int color) at mm/kmemleak.c:717>:
+  360         paint_ptr() <void paint_ptr (unsigned long ptr, int color) at mm/kmemleak.c:726>: [see 77]
+  361     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  362     object_set_excess_ref() <void object_set_excess_ref (unsigned long ptr, unsigned long excess_ref) at mm/kmemleak.c:810>: [see 83]
+  363     object_no_scan() <void object_no_scan (unsigned long ptr) at mm/kmemleak.c:833>: [see 86]
+  364     early_alloc() <void early_alloc (struct early_log log) at mm/kmemleak.c:890>: [see 38]
+  365     kmemleak_update_trace() <void __ref kmemleak_update_trace (const void *ptr) at mm/kmemleak.c:1082> [see 56]
+  366     scan_object() <void scan_object (struct kmemleak_object object) at mm/kmemleak.c:1392>: [see 71]
+  367     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  368     kmemleak_seq_show() <int kmemleak_seq_show (struct seq_file seq, void *v) at mm/kmemleak.c:1749> [see 155]
+  369     dump_str_object_info() <int dump_str_object_info (const char *str) at mm/kmemleak.c:1773>: [see 92]
+  370     kmemleak_clear() <void kmemleak_clear (void) at mm/kmemleak.c:1801>: [see 233]
+  371 spin_lock_nested():
+  372     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  373 spin_unlock():
+  374     scan_block() <void scan_block (void *_start, void *_end, struct kmemleak_object scanned) at mm/kmemleak.c:1300>: [see 65]
+  375 spin_unlock_irqrestore():
+  376     paint_it() <void paint_it (struct kmemleak_object object, int color) at mm/kmemleak.c:717>: [see 359]
+  377     add_scan_area() <void add_scan_area (unsigned long ptr, size_t size, gfp_t gfp) at mm/kmemleak.c:764>: [see 29]
+  378     object_set_excess_ref() <void object_set_excess_ref (unsigned long ptr, unsigned long excess_ref) at mm/kmemleak.c:810>: [see 83]
+  379     object_no_scan() <void object_no_scan (unsigned long ptr) at mm/kmemleak.c:833>: [see 86]
+  380     early_alloc() <void early_alloc (struct early_log log) at mm/kmemleak.c:890>: [see 38]
+  381     kmemleak_update_trace() <void __ref kmemleak_update_trace (const void *ptr) at mm/kmemleak.c:1082> [see 56]
+  382     scan_object() <void scan_object (struct kmemleak_object object) at mm/kmemleak.c:1392>: [see 71]
+  383     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  384     kmemleak_seq_show() <int kmemleak_seq_show (struct seq_file seq, void *v) at mm/kmemleak.c:1749> [see 155]
+  385     dump_str_object_info() <int dump_str_object_info (const char *str) at mm/kmemleak.c:1773>: [see 92]
+  386     kmemleak_clear() <void kmemleak_clear (void) at mm/kmemleak.c:1801>: [see 233]
+  387 strcmp():
+  388     kmemleak_boot_config() <int kmemleak_boot_config (char *str) at mm/kmemleak.c:1972> [see 114]
+  389 strncmp():
+  390     kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  391 strncpy()
+  392 strncpy_from_user():
+  393     kmemleak_write() <ssize_t kmemleak_write (struct file file, const char __user *user_buf, size_t size, loff_t *ppos) at mm/kmemleak.c:1837> [see 52]
+  394 time_before_eq():
+  395     unreferenced_object() <bool unreferenced_object (struct kmemleak_object object) at mm/kmemleak.c:353>:
+  396         kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  397         kmemleak_seq_show() <int kmemleak_seq_show (struct seq_file seq, void *v) at mm/kmemleak.c:1749> [see 155]
+  398         kmemleak_clear() <void kmemleak_clear (void) at mm/kmemleak.c:1801>: [see 233]
+  399 try_get_task_stack():
+  400     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  401 typeof():
+  402     scan_gray_list() <void scan_gray_list (void) at mm/kmemleak.c:1437>: [see 72]
+  403 while_each_thread():
+  404     kmemleak_scan() <void kmemleak_scan (void) at mm/kmemleak.c:1471>: [see 67]
+  405 write_lock_irqsave()
+  406 write_unlock_irqrestore()

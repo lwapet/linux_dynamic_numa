@@ -1,0 +1,91 @@
+[00007feb35201137] execve("/usr/bin/numactl", ["numactl", "-s"], [/* 77 vars */]) = 0
+[00007f37064d531c] brk(0)               = 0x195e000
+[00007f37064d66c7] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f37064d67ea] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066dd000
+[00007f37064d66c7] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[00007f37064d6667] open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[00007f37064d65f4] fstat(3, {st_mode=S_IFREG|0644, st_size=125191, ...}) = 0
+[00007f37064d67ea] mmap(NULL, 125191, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f37066be000
+[00007f37064d67c7] close(3)             = 0
+[00007f37064d66c7] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f37064d6667] open("/usr/lib/x86_64-linux-gnu/libnuma.so.1", O_RDONLY|O_CLOEXEC) = 3
+[00007f37064d6687] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260.\0\0\0\0\0\0"..., 832) = 832
+[00007f37064d65f4] fstat(3, {st_mode=S_IFREG|0644, st_size=43896, ...}) = 0
+[00007f37064d67ea] mmap(NULL, 2140096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f37062b2000
+[00007f37064d6837] mprotect(0x7f37062bc000, 2093056, PROT_NONE) = 0
+[00007f37064d67ea] mmap(0x7f37064bb000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7f37064bb000
+[00007f37064d67c7] close(3)             = 0
+[00007f37064d66c7] access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+[00007f37064d6667] open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[00007f37064d6687] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P \2\0\0\0\0\0"..., 832) = 832
+[00007f37064d65f4] fstat(3, {st_mode=S_IFREG|0755, st_size=1857312, ...}) = 0
+[00007f37064d67ea] mmap(NULL, 3965632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3705ee9000
+[00007f37064d6837] mprotect(0x7f37060a7000, 2097152, PROT_NONE) = 0
+[00007f37064d67ea] mmap(0x7f37062a7000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1be000) = 0x7f37062a7000
+[00007f37064d67ea] mmap(0x7f37062ad000, 17088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f37062ad000
+[00007f37064d67c7] close(3)             = 0
+[00007f37064d67ea] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066bd000
+[00007f37064d67ea] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066bb000
+[00007f37064bdf74] arch_prctl(ARCH_SET_FS, 0x7f37066bb740) = 0
+[00007f37064d6837] mprotect(0x7f37062a7000, 16384, PROT_READ) = 0
+[00007f37064d6837] mprotect(0x7f37064bb000, 4096, PROT_READ) = 0
+[00007f37064d6837] mprotect(0x605000, 4096, PROT_READ) = 0
+[00007f37064d6837] mprotect(0x7f37066df000, 4096, PROT_READ) = 0
+[00007f37064d6817] munmap(0x7f37066be000, 125191) = 0
+[00007f3705fddd4c] brk(0)               = 0x195e000
+[00007f3705fddd4c] brk(0x197f000)       = 0x197f000
+[00007f3705fd8140] open("/proc/self/status", O_RDONLY) = 3
+[00007f3705fd7d14] fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+[00007f3705fe14fa] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066dc000
+[00007f3705fd8330] read(3, "Name:\tnumactl\nUmask:\t0002\nState:"..., 1024) = 1024
+[00007f3705fd8a90] close(3)             = 0
+[00007f3705fe1527] munmap(0x7f37066dc000, 4096) = 0
+[00007f3705fd81e0] openat(AT_FDCWD, "/sys/devices/system/node", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = 3
+[00007f3705faa215] getdents(3, /* 10 entries */, 32768) = 312
+[00007f3705fd8140] open("/sys/devices/system/node/node0/meminfo", O_RDONLY) = 4
+[00007f3705fd7d14] fstat(4, {st_mode=S_IFREG|0444, st_size=4096, ...}) = 0
+[00007f3705fe14fa] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066dc000
+[00007f3705fd8330] read(4, "Node 0 MemTotal:        3587748 "..., 4096) = 980
+[00007f3705fd8330] read(4, "", 4096)    = 0
+[00007f3705fd8a90] close(4)             = 0
+[00007f3705fe1527] munmap(0x7f37066dc000, 4096) = 0
+[00007f3705faa215] getdents(3, /* 0 entries */, 32768) = 0
+[00007f3705fd8a90] close(3)             = 0
+[00007f3705fe1389] sched_getaffinity(0, 512, {f, 0, 0, 0, 0, 0, 0, 0}) = 64
+[00007f3705fd81e0] openat(AT_FDCWD, "/sys/devices/system/cpu", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = 3
+[00007f3705faa215] getdents(3, /* 17 entries */, 32768) = 496
+[00007f3705faa215] getdents(3, /* 0 entries */, 32768) = 0
+[00007f3705fd8a90] close(3)             = 0
+[00007f3705fd8140] open("/proc/self/status", O_RDONLY) = 3
+[00007f3705fd7d14] fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+[00007f3705fe14fa] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066dc000
+[00007f3705fd8330] read(3, "Name:\tnumactl\nUmask:\t0002\nState:"..., 1024) = 1024
+[00007f3705fd8330] read(3, "1\n", 1024) = 2
+[00007f3705fd8330] read(3, "", 1024)    = 0
+[00007f3705fd8a90] close(3)             = 0
+[00007f3705fe1527] munmap(0x7f37066dc000, 4096) = 0
+[00007f3705fe1389] get_mempolicy(NULL, {}, 0, 0, 0) = 0
+[00007f3705fe1389] sched_getaffinity(0, 64, {f, 0, 0, 0, 0, 0, 0, 0}) = 64
+[00007f3705fd8140] open("/sys/devices/system/node/node0/cpumap", O_RDONLY) = 3
+[00007f3705fd7d14] fstat(3, {st_mode=S_IFREG|0444, st_size=4096, ...}) = 0
+[00007f3705fe14fa] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066dc000
+[00007f3705fd8330] read(3, "f\n", 4096) = 2
+[00007f3705fd8a90] close(3)             = 0
+[00007f3705fe1527] munmap(0x7f37066dc000, 4096) = 0
+[00007f3705fe1389] get_mempolicy(MPOL_DEFAULT, 0x195e340, 65, 0, 0) = 0
+[00007f3705fe1389] get_mempolicy(MPOL_DEFAULT, 0x195e340, 65, 0, 0) = 0
+[00007f3705fe1389] get_mempolicy(MPOL_DEFAULT, 0x195e440, 65, 0, 0) = 0
+[00007f3705fe1389] get_mempolicy(0x7ffd6bac172c, {}, 0, 0, MPOL_F_NODE) = -1 EINVAL (Invalid argument)
+[00007f3705fe1389] get_mempolicy(MPOL_DEFAULT, {}, 0, 0, 0) = 0
+[00007f3705fd7d14] fstat(1, {st_mode=S_IFREG|0664, st_size=5954, ...}) = 0
+[00007f3705fe14fa] mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37066dc000
+[00007f3705fe1389] sched_getaffinity(0, 8, {f}) = 8
+[00007f3705fd8390] write(1, "policy: default\npreferred node: "..., 99policy: default
+preferred node: current
+physcpubind: 0 1 2 3 
+cpubind: 0 
+nodebind: 0 
+membind: 0 
+) = 99
+[00007f3705fae109] exit_group(0)        = ?
+[????????????????] +++ exited with 0 +++

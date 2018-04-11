@@ -1,0 +1,217 @@
+1emblock_find_in_range_node
+             numa
+ xen_memory_setup
+early_ioremap_init
+  kernel_init
+ numa_init
+  numa_emulation
+ acpi_numa_init
+numa_setup
+ setup_arch
+numa_emu_cmdline
+ numa_meminfo
+numa_register_memblks
+ initmem_init
+x86_numa_init
+numa_memblk
+x86_numa_init
+ numa_memblk
+x86_acpi_numa_init
+ numa_emu_cmdline
+set_membind
+xen_start_kernel
+start_kernel
+node_data
+numa nodes  vnuma
+xen_numa_init
+memory_dev_init
+x86_64_start_kernel
+start_kernel
+memblock_alloc_range_nid
+NODE_DATA
+store_mem_state
+memory_dev_init
+device_online
+cpu_dev_init
+externe
+numa_sched_getaffinity_v2_int
+object_list
+kmemleak_alloc_phys
+__initdata_memblock
+memblock
+kmem_leak_fr
+register_page_bootmem_info
+find_and_remove_object
+numa_init
+NODE_DATA
+numa_sched_getaffinity
+ sched_getaffinity
+cpu_active_mask
+node_device
+node_to_cpumask_mapa
+memblock_virt_alloc_internal
+page
+mpol_put
+numa_node_to_cpus_v2_int
+topology_init         
+schedule
+wake_up_process       
+switch_to
+set_mempolicy       
+task_unlock         
+memory       a
+paging_init     
+do_get_mempolicy      
+init_idle
+do_page_fault           
+register_page_bootmem_info_node     
+free_area_init_core       
+set_cpu_numa_node      
+lavoisier           
+memory_op 
+schedule 
+ switch_to   
+paging_init      
+numa_set_node
+char_nodes_state       
+XEN_DOMCTL_setvnumainfo
+node_data
+cpu_to_node      
+register_one_node
+memblock_virt_alloc_node
+register_page_bootmem_info       
+mempolicy
+highmem_dirtyable_memory
+memmap_init_zone  
+node_info          
+__HYPERVISOR_grant_table_op   
+grant_table_op                       
+hypercall_args_table       
+Movable           
+xen_setup_vcpu_info_placement
+cpuhp_invoke_callback
+extern         
+kernel_init                  
+init_cpu_to_node 
+numa_init_array      
+xen_setup_vcpu_info_placement        
+xen_foreach_remap_area         
+numa_cleanup_meminfo
+XENMEM_memory_map   
+__log_buf
+trace_array_printk_buf
+shared_info  shared_info
+set_online_page_callback
+remove_memory          
+acpi_memory_device_remove
+acpi_install_notify_handler
+set_online_page_callback        
+acpi_hotplug_schedule        
+*** xen_pagetable_init /*********************** second candidate of page removal *********************/
+remove_memory                  
+start_kernel /******************************* third candidate for page removal****************/
+HYPERVISOR_update_va_mapping      
+
+xen_make_pte_init                                                                                                                                                                                               
+xen_online_page       
+p2m
+add_memory
+memblock_reserve
+e820__memblock_setup
+__memblock_find_range_top_down          
+MMU_MACHPHYS_UPDATE
+NEWBASE_PTR
+mmuext_op
+sparse_early_mem_maps_alloc_node         
+add_pfn_range_mapped   
+device_offline
+
+
+
+
+free_area_init_nodes /***************important to remove pages**************/
+zone_sizes_init /****************** first candidate for memory removal localisation*******/
+
+
+offline_pages
+dev_attr_state_name
+
+Function or tools I can use.
+      page_outside_zone_boundaries 
+      static int page_is_consistent(struct zone *zone, struct page *page)
+      free_pages_check_bad
+      zone->zone_start_pfn
+      zone_end_pfn(zone)
+      for (zid = 0; zid < MAX_NR_ZONES; zid++) {  
+              struct zone *zone = &pgdat->node_zones[zid];  
+      early_pfn_to_nid
+       pg_data_t *pgdat = NODE_DATA(nid);
+       get_pfn_range_for_nid
+       find_usable_zone_for_movable /* find zones not in the movable zone but which can be removed nonetheless */    
+      zone_spanned_pages_in_node
+      zone_absent_pages_in_node
+      find_min_pfn_for_node
+       for_each_online_pgdat(pgdat) {
+              for (j = 0; j < MAX_NR_ZONES; j++) { 
+                    struct zone *zone = pgdat->node_zones + j;  
+       struct zone *zone;
+       for_each_zone(zone)
+       for_each_online_pgdat(pgdat) 
+     has_unmovable_pages
+      page_to_nid
+     page_zone
+     page_to_pfn
+    zone_spans_pfna
+    get_pfn_range_for_nid
+          &pgdat->lru_lock //////////// How to use it
+     unsigned long zone_start_pfn = zone->zone_start_pfn;
+
+kernelcore 
+
+
+to do : analyse this function ----->  find_zone_movable_pfns_for_nodes and try to hack required_kernel_core (amount of memory in bytes not movables)
+
+buddy
+check_pages_isolated
+
+do_initcalls
+free_all_bootmem 
+init_bootmem_node init_bootmem
+
+ build_all_zonelists(NULL, NULL);///////////////////////////////////////////memory
+        page_alloc_init();   for page initialisation
+removing added at ./drivers/leds/trigger/ledtrig-cpu.c:167:        x86_init.resources.dynamic_remove_pfn();
+numa_clear_kernel_node_hotplug   
+
+xenvif_tx_action
+
+** to see how page migration walk
+xenvif_rx_action
+gnttab_grant_foreign_transfer
+GNTTABOP_transfer
+GNTTABOP_map_grant_ref
+xenvif_connect_data
+*
+
+
+
+/******************** Le projet de hotplug de la mémoire a été abandonné *********************/ 
+    on se concetre sur les cpus
+ set_cpu_present, xen_fill_possible_map xen_cpu_up_prepare_pv
+  cpu_possible_mask (is fixed at boot)  possible_cpus cpu_possible_mask/for_each_possible_cpu()
+  include/linux/cpumask.h
+  cpu_online_mask   __cpu_up()  __cpu_disable()
+  cpu_present_mask events : hot-add/hot-remove (Logical hotplug)
+ 
+   for_each_possible_cpu     - Iterate over cpu_possible_mask
+	for_each_online_cpu       - Iterate over cpu_online_mask
+	for_each_present_cpu      - Iterate over cpu_present_mask
+	for_each_cpu_mask(x,mask) - Iterate over some random collection of cpu mask.
+
+	#include <linux/cpu.h>
+	get_online_cpus() and put_online_cpus():
+
+mempolicy 
+__NR_get_mempolicy
+__NR_get_mempolicy
+do_get_mempolicy
